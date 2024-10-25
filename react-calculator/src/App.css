@@ -1,0 +1,145 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* Prevent horizontal overflow */
+  width: 100%;
+  min-height: 100%; /* Ensure the body takes at least the full height of the screen */
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center items vertically */
+  width: 100vw; /* Ensure the App container takes the full width of the screen */
+  min-height: 100vh; /* Ensure the App container takes at least the full height of the screen */
+  background-color: #f0f0f0;
+  box-sizing: border-box; /* Include padding and border in the element's total width and height */
+  padding-bottom: 20px; /* Add padding at the bottom */
+}
+
+.App-header {
+  width: 100%; /* Make the header fill the whole width of the screen */
+  background-color: #000; /* Set the background color to black */
+  color: #fff; /* Set the text color to white */
+  padding: 10px 0; /* Reduce padding to make the header smaller */
+  text-align: center; /* Center the text */
+  margin-bottom: 20px;
+}
+
+.content {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; /* Align items to the top */
+  margin-top: 20px; /* Add some margin to the top */
+  flex-grow: 1; /* Allow the content to grow and fill the available space */
+  flex-wrap: wrap; /* Allow items to wrap to the next line */
+}
+
+.history {
+  margin-left: 20px; /* Add space between the calculator and the history log */
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  color: #000; /* Set text color to black */
+  overflow-y: auto; /* Enable vertical scrolling */
+  width: 300px; /* Match the width of the calculator */
+  height: 550px; /* Set the height of the history tab */
+}
+
+.history h2 {
+  margin-top: 0;
+  border-bottom: 1px solid #888; /* Add a thinner, darker line under the History header */
+  padding-bottom: 10px;
+}
+
+.history ul {
+  list-style-type: none;
+  padding-left: 0;
+  flex-grow: 1; /* Ensure the ul grows to fill the available space */
+}
+
+.history li {
+  margin-bottom: 10px;
+  border-bottom: 1px solid #ccc; /* Add a thinner line separating each calculation */
+  padding-bottom: 10px;
+}
+
+.calculator {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 300px; /* Ensure the calculator has a fixed width */
+  height: 550px; /* Set the height of the calculator */
+}
+
+.display {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.display input {
+  font-size: 2.5em; /* Increase font size */
+  padding: 15px; /* Increase padding */
+  margin-bottom: 10px;
+  text-align: right;
+  width: 100%; /* Ensure the input field takes the full width of its container */
+  box-sizing: border-box; /* Include padding and border in the element's total width and height */
+  overflow-x: auto; /* Enable horizontal scrolling */
+}
+
+.result {
+  font-size: 1.5em;
+  text-align: right;
+  color: #888;
+  width: 100%;
+}
+
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  width: 100%;
+}
+
+button {
+  padding: 20px;
+  font-size: 1.5em;
+  border: none;
+  background-color: #f0f0f0;
+  color: #333;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+button.operator {
+  background-color: #d3d3d3; /* Gray color for operation buttons */
+}
+
+button:hover {
+  background-color: #333;
+  color: #fff;
+}
+
+/* Media query to stack the history log under the calculator on smaller screens */
+@media (max-width: 640px) {
+  .content {
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center items horizontally */
+  }
+
+  .history {
+    margin-left: 0; /* Remove left margin */
+    margin-top: 20px; /* Add top margin */
+  }
+}
